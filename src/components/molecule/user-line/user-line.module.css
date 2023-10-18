@@ -1,0 +1,7 @@
+.user_holder {
+    @apply col-span-4 items-center gap-x-3 gap-y-2 font-suisse grid grid-flow-col grid-rows-2 justify-start;
+}
+
+.user_holder > div:first-child {
+    @apply row-span-2
+}

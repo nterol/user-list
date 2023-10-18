@@ -1,0 +1,10 @@
+.avatar {
+    @apply rounded-full;
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    top: 0;
+    background-image: var(--avatar-url);
+    background-size: cover;
+    background-repeat: no-repeat;
+}

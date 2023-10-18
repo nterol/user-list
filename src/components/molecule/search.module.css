@@ -1,0 +1,8 @@
+.search_bar {
+    @apply border border-primary rounded-md flex items-center gap-1 px-2 py-1;
+    
+}
+
+.search_bar:focus-within {
+    box-shadow: 0 0 0 2px rgba(28, 74, 71, 0.04), 0 0 0 2px rgba(42, 59, 81, 0.12);
+}

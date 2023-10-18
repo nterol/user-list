@@ -1,17 +1,24 @@
-import mainLogo from './assets/icon/logo.svg';
-import './App.css';
+import { Header } from '@/components/header';
+
+import { ActionHeaderSection } from '@/components/organism/action-header-section';
+import { FilterSection } from './components/organism/filter-section';
+import { Outlet } from 'react-router-dom';
+import { useSyncUser } from './hooks/useSyncUser';
+import { Labels } from './components/molecule/labels';
 
 function App() {
+  useSyncUser();
   return (
     <>
-      <div className="flex justify-center">
-        <a href="/" target="_blank">
-          <img src={mainLogo} className="logo" alt="User logo" />
-        </a>
-      </div>
-      <section className="bg-main flex justify-center items-center p-4">
-        <h1>Hello World</h1>
-      </section>
+      <Header />
+      <main className="max-w-[80vw] mx-auto flex flex-col gap-8 pt-16">
+        <ActionHeaderSection />
+        <FilterSection />
+        <section className="flex flex-col border border-primary rounded-md">
+          <Labels />
+          <Outlet />
+        </section>
+      </main>
     </>
   );
 }
