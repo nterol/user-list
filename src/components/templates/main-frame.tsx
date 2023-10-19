@@ -9,9 +9,8 @@ export function MainFrame({ children }: MainFrameProps) {
   return (
     <>
       <Header />
-      <main className="max-w-[80vw] mx-auto flex flex-col gap-8 pt-16">
+      <main className="max-w-[80vw] mx-auto flex flex-col gap-8 pt-16 pb-16">
         <ActionHeaderSection />
-
         {children}
       </main>
     </>

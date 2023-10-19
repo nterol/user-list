@@ -1,5 +1,6 @@
-import { User } from '@/utils/schema';
 import s from './avatar.module.css';
+
+import { type User } from '@/utils/schema';
 
 type AvatarProps = Pick<User, 'name' | 'avatar'>;
 

@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { useLoaderData } from 'react-router-dom';
 
 import { SetUserFamily } from '@/store/users';
-import { User } from '@/utils/schema';
+import { type User } from '@/utils/schema';
 
 export function useSyncUser() {
   const setUsers = useSetAtom(SetUserFamily);

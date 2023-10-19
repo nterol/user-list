@@ -2,6 +2,10 @@
 export default {
   content: ['./index.html', './src/**/*.{ts,tsx}'],
   theme: {
+    fontFamily: {
+      sans: ['SuisseIntl-regular', 'sans-serif'],
+    },
+
     extend: {
       fontFamily: {
         suisse: ['SuisseIntl-regular', 'sans-serif'],

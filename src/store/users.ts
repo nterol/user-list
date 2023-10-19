@@ -1,7 +1,7 @@
 import { atom } from 'jotai';
 import { atomFamily, selectAtom } from 'jotai/utils';
 
-import { User } from '@/utils/schema';
+import { type User } from '@/utils/schema';
 
 export const UserFamily = atomFamily(() => atom<User | null>(null));
 export const UserRegistry = atom<User['id'][]>([]);

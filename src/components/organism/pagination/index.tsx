@@ -11,7 +11,7 @@ export function Pagination() {
   if (totalPage === 1 || page === null) return null;
 
   return (
-    <section className="flex items-center justify-center bg-white p-4">
+    <section className="flex items-center justify-center bg-white p-4 rounded-b-md">
       <NavBar setNavigation={setPage} currentPage={page} />
     </section>
   );

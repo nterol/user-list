@@ -18,7 +18,6 @@ export function UserTable() {
     <section className="relative flex flex-col border border-primary rounded-md bg-primary">
       <Labels />
       {registry.length > 0 ? registry.map((id) => <UserLine key={id} id={id} />) : <NoResult />}
-
       <Pagination />
     </section>
   );

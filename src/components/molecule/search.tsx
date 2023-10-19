@@ -8,7 +8,7 @@ import { SearchIcon } from '@/components/icons/search';
 import { useDebounce } from '@/hooks/useDebounce';
 import { useSearch } from '@/hooks/useFilter';
 import { AllUsers, SearchRegistry } from '@/store/users';
-import { User } from '@/utils/schema';
+import { type User } from '@/utils/schema';
 
 const options = {
   includeScores: false,

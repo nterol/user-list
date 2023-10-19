@@ -1,0 +1,15 @@
+.tooltip {
+    @apply z-10 left-0 right-0 absolute w-[100px] flex flex-col items-center font-bold bg-main text-white rounded-md p-1 pointer-events-none before:bg-main;
+    
+}
+
+.tooltip:before {
+    content:"";
+    position: absolute;
+    width: 16px;
+    height: 16px; 
+    left: 50%;
+    transform: translate(-50%, 0) rotate(45deg);
+    bottom: -6px;    
+    z-index: -1;
+}

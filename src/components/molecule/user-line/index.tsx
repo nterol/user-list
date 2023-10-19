@@ -1,59 +1,18 @@
 import { useAtomValue } from 'jotai';
 
-import s from './user-line.module.css';
+import { Access } from '../access';
 
-import { Avatar } from '@/components/atom/avatar';
+import { FormatStamp } from '@/components/atom/format-stamp';
 import { Pill } from '@/components/atom/pill';
+import { UserHolder } from '@/components/atom/user-holder';
 import { MoreIcon } from '@/components/icons/more';
 import { TeamIcon } from '@/components/icons/team';
 import { UserFamily } from '@/store/users';
-import { User } from '@/utils/schema';
-
-type UserHolderProps = Pick<User, 'name' | 'email' | 'avatar'>;
-
-const UserHolder = ({ name, email, avatar }: UserHolderProps) => (
-  <section className={s.user_holder}>
-    <Avatar name={name} avatar={avatar} />
-    <p className="font-semibold">{name}</p>
-    <p className="text-primary">{email}</p>
-  </section>
-);
+import { type User } from '@/utils/schema';
 
 type UserLineProps = {
   id: User['id'];
 };
-
-const defaultOptions: Intl.DateTimeFormatOptions = {
-  year: 'numeric',
-  month: 'numeric',
-  day: 'numeric',
-  hour: 'numeric',
-  minute: 'numeric',
-  second: 'numeric',
-  hour12: false,
-  timeZone: 'Europe/Paris',
-};
-
-function FormatStamp({
-  timeStamp,
-  options = defaultOptions,
-}: {
-  timeStamp: number | null;
-  options?: Intl.DateTimeFormatOptions;
-}) {
-  if (!timeStamp) return <p></p>;
-  const formatedStamp = new Intl.DateTimeFormat('fr', options).format(new Date(timeStamp));
-  return <p className="text-text-secondary text-xs">{formatedStamp}</p>;
-}
-
-function Access({ access }: { access: User['access'] | null }) {
-  const accessNb = access ? access.length : 0;
-  return (
-    <p className="text-text-secondary text-xs">
-      {accessNb === 0 ? 'No access' : `On ${accessNb} product${accessNb > 1 ? 's' : ''}`}
-    </p>
-  );
-}
 
 export function UserLine({ id }: UserLineProps) {
   const user = useAtomValue(UserFamily(id));
