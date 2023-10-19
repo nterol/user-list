@@ -10,11 +10,40 @@ module.exports = {
   ],
   ignorePatterns: ['dist', '.eslintrc.cjs'],
   parser: '@typescript-eslint/parser',
-  plugins: ['react-refresh'],
+  plugins: ['react-refresh', "import"],
   rules: {
     'react-refresh/only-export-components': [
       'warn',
       { allowConstantExport: true },
     ],
   },
+  overrides: [
+    // apply only to typescript files
+    {
+      files: [
+        "**/*.ts",
+        "**/*.tsx"
+      ],
+      rules: {
+        "import/order": [
+          "error",
+          {
+            "newlines-between": "always",
+            "groups": [
+              "builtin", // Built-in types are first
+              "external",
+              "internal",
+              "parent",
+              "sibling"
+            ],
+            "alphabetize": {
+              "order": "asc",
+              "caseInsensitive": false
+            },
+            "warnOnUnassignedImports": false
+          }
+        ]
+      }
+    }
+  ]
 }

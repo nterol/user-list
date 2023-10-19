@@ -1,6 +1,6 @@
 export function Labels() {
   return (
-    <div className="bg-primary grid grid-cols-12 gap-1 text-text-secondary p-5">
+    <div className="top-0 bg-primary grid grid-cols-12 gap-1 text-text-secondary p-5">
       <div className="col-span-4">
         <h3 className="">User</h3>
       </div>

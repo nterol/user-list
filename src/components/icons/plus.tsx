@@ -1,9 +1,9 @@
 import { BaseIconProp } from './types';
 
-export function PlusIcon(props: BaseIconProp) {
+export function PlusIcon({ classes = 'h-[16px] w-[16px]' }: BaseIconProp) {
   return (
     <svg
-      className={props.classes}
+      className={classes}
       xmlns="http://www.w3.org/2000/svg"
       fill="currentColor"
       stroke="currentColor"

@@ -10,6 +10,7 @@ export async function mainLoader() {
 
     return res as User[];
   } catch (e) {
-    console.log('ERROR', e);
+    console.log('ERROR', e); // TODO Handle This in react-router
+    return [];
   }
 }
