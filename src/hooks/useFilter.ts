@@ -7,7 +7,7 @@ import { max_count } from './usePagination';
 
 import { CurrentPage } from '@/store/page';
 import { FinalRegistry } from '@/store/users';
-import { cleanObject } from '@/utils/clean-object';
+import { cleanObject, removeEmptyArray } from '@/utils/clean-object';
 
 export function useAllFilters() {
   const [params, setParams] = useSearchParams();
@@ -25,7 +25,7 @@ export function useRole() {
   const setRoles = (role: string | null) => {
     const newRoles = role ? (roles.includes(role) ? roles.filter((r) => r !== role) : [...roles, role]) : null;
 
-    const newParams = cleanObject({ ...params, roles: newRoles });
+    const newParams = removeEmptyArray(cleanObject({ ...params, roles: newRoles }));
 
     setParams(newParams);
   };

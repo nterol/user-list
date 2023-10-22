@@ -1,8 +1,10 @@
-import { ArrowButton, NavButton } from '@/components/atom/navigation';
-import { PageTotal } from '@/store/page';
 import { useAtomValue } from 'jotai';
 import { useMemo } from 'react';
+
 import { MoreIcon } from '../icons/more';
+
+import { ArrowButton, NavButton } from '@/components/atom/navigation';
+import { PageTotal } from '@/store/page';
 
 type NavProps = {
   currentPage: number;
